@@ -17,8 +17,9 @@ $(function(){
 
                     /* add open class + click */
 
-                    $($parent).addClass('has-sub');
-                    $($parent).prepend('<span>&nbsp;</span>');
+                    $($parent)
+                        .addClass('has-sub')
+                        .prepend('<span>&nbsp;</span>')
 
                     $sub_nav = $($parent).find('span').eq(0);
                     $($sub_nav).click(function(){
