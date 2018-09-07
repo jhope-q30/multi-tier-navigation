@@ -38,6 +38,7 @@ nav[role="multi-tier"] {
     display:block;
 
     a { color:#333; display:block; }
+    a:hover { color:tomato !important; }
 
     /* global + first tier */
 
@@ -48,11 +49,13 @@ nav[role="multi-tier"] {
         border:0;
         display:block;
         list-style:none;
+        background-color:rgb(56, 56, 56);
     }
-    > ul > li { border-bottom:1px solid #eee; }
+    > ul > li { border-bottom:1px solid rgb(56, 56, 56); }
     > ul > li:last-child { border:0; }
     > ul > li a {
         padding:0.6em 1em 0.6em 1em;
+        width:calc( 100% - 4em );
         text-decoration:none;
     }
     > ul > li > a {
@@ -72,6 +75,19 @@ nav[role="multi-tier"] {
     ul li > ul li > ul > li a {
         color:#333 !important;
         background-color:#ccc;
+    }
+
+    /* hide sub navigation items */
+
+    ul * ul { display:none; }
+
+    /* has sub navigation */
+
+    li.has-sub {
+        background-image:url('../img/chev-box.svg');
+        background-position:top right;
+        background-size:32px 32px;
+        background-repeat:no-repeat;
     }
 
 }

@@ -34,10 +34,15 @@ nav[role="multi-tier"] {
   /* global + first tier */
   /* second tier */
   /* third tier */
+  /* hide sub navigation items */
+  /* has sub navigation */
 }
 nav[role="multi-tier"] a {
   color: #333;
   display: block;
+}
+nav[role="multi-tier"] a:hover {
+  color: tomato !important;
 }
 nav[role="multi-tier"] ul,
 nav[role="multi-tier"] ul li {
@@ -46,15 +51,17 @@ nav[role="multi-tier"] ul li {
   border: 0;
   display: block;
   list-style: none;
+  background-color: #383838;
 }
 nav[role="multi-tier"] > ul > li {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #383838;
 }
 nav[role="multi-tier"] > ul > li:last-child {
   border: 0;
 }
 nav[role="multi-tier"] > ul > li a {
   padding: 0.6em 1em 0.6em 1em;
+  width: calc(100% - 4em);
   text-decoration: none;
 }
 nav[role="multi-tier"] > ul > li > a {
@@ -68,4 +75,13 @@ nav[role="multi-tier"] ul li > ul > li a {
 nav[role="multi-tier"] ul li > ul li > ul > li a {
   color: #333 !important;
   background-color: #ccc;
+}
+nav[role="multi-tier"] ul * ul {
+  display: none;
+}
+nav[role="multi-tier"] li.has-sub {
+  background-image: url('../img/chev-box.svg');
+  background-position: top right;
+  background-size: 32px 32px;
+  background-repeat: no-repeat;
 }
