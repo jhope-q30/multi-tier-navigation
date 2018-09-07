@@ -31,6 +31,9 @@ nav[role="multi-tier"] {
   margin: 0;
   padding: 0;
   display: block;
+  /* global + first tier */
+  /* second tier */
+  /* third tier */
 }
 nav[role="multi-tier"] a {
   color: #333;
@@ -51,8 +54,18 @@ nav[role="multi-tier"] > ul > li:last-child {
   border: 0;
 }
 nav[role="multi-tier"] > ul > li a {
-  padding: 0.5em 1em 0.6em 1em;
+  padding: 0.6em 1em 0.6em 1em;
   text-decoration: none;
+}
+nav[role="multi-tier"] > ul > li > a {
   color: #eee !important;
   background-color: #666;
+}
+nav[role="multi-tier"] ul li > ul > li a {
+  color: #333 !important;
+  background-color: #999;
+}
+nav[role="multi-tier"] ul li > ul li > ul > li a {
+  color: #333 !important;
+  background-color: #ccc;
 }

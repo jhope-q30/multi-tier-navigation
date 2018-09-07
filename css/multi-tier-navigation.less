@@ -38,6 +38,9 @@ nav[role="multi-tier"] {
     display:block;
 
     a { color:#333; display:block; }
+
+    /* global + first tier */
+
     ul,
     ul li {
         margin:0;
@@ -49,10 +52,26 @@ nav[role="multi-tier"] {
     > ul > li { border-bottom:1px solid #eee; }
     > ul > li:last-child { border:0; }
     > ul > li a {
-        padding:0.5em 1em 0.6em 1em;
+        padding:0.6em 1em 0.6em 1em;
         text-decoration:none;
+    }
+    > ul > li > a {
         color:#eee !important;
         background-color:#666;
+    }
+
+    /* second tier */
+
+    ul li > ul > li a {
+        color:#333 !important;
+        background-color:#999;
+    }
+
+    /* third tier */
+
+    ul li > ul li > ul > li a {
+        color:#333 !important;
+        background-color:#ccc;
     }
 
 }
