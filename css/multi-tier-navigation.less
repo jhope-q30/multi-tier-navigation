@@ -83,11 +83,23 @@ nav[role="multi-tier"] {
 
     /* has sub navigation */
 
-    li.has-sub {
+    li.has-sub { position:relative; height:100%; }
+    li.has-sub:after { .clear; }
+    li.has-sub span {
+        position:absolute;
+        top:0;
+        right:0;
+        width:2em;
+        height:100%;
         background-image:url('../img/chev-box.svg');
         background-position:top right;
         background-size:32px 32px;
         background-repeat:no-repeat;
+        cursor:pointer;
+        display:block;
+    }
+    li.has-sub.open > ul {
+        display:block;
     }
 
 }

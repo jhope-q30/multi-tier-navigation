@@ -80,8 +80,31 @@ nav[role="multi-tier"] ul * ul {
   display: none;
 }
 nav[role="multi-tier"] li.has-sub {
+  position: relative;
+  height: 100%;
+}
+nav[role="multi-tier"] li.has-sub:after {
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  display: block;
+}
+nav[role="multi-tier"] li.has-sub span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2em;
+  height: 100%;
   background-image: url('../img/chev-box.svg');
   background-position: top right;
   background-size: 32px 32px;
   background-repeat: no-repeat;
+  cursor: pointer;
+  display: block;
+}
+nav[role="multi-tier"] li.has-sub.open > ul {
+  display: block;
 }

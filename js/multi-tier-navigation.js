@@ -1,15 +1,40 @@
 $(function(){
 
-    var $MTV = function(){
+    var $MTV = function($args){
+        this.target = $($args.target);
         this.init = function(){
             this.prep();
         }
         this.prep = function(){
-            console.log('this is prep');
+
+            var $this = this;
+            
+            $(this.target).find('ul').each(function(){
+
+                var $parent = $(this).parent();
+
+                if($($parent).children().length > 1){
+
+                    /* add open class + click */
+
+                    $($parent).addClass('has-sub');
+                    $($parent).prepend('<span>&nbsp;</span>');
+
+                    $sub_nav = $($parent).find('span').eq(0);
+                    $($sub_nav).click(function(){
+
+                        $(this).parent().toggleClass('open');
+
+                    });
+
+                }
+
+            });
+
         }
     }
 
-    var $mNav = new $MTV();
+    var $mNav = new $MTV({ target: '#multi-tier-nav' });
     $mNav.init();
 
 });
